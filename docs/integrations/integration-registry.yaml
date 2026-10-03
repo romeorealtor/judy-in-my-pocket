@@ -1,0 +1,302 @@
+# Judy in My Pocket — Integration Registry
+# Defines all tools we plan to support, their tier, and connection method
+
+integrations:
+
+  # ═══════════════════════════════════════
+  # TIER 1 — CORE (every agent, day one)
+  # ═══════════════════════════════════════
+
+  crm:
+    - slug: kw_command
+      name: KW Command
+      tier: 1
+      method: api_nation  # via API Nation connector
+      status: planned
+
+    - slug: follow_up_boss
+      name: Follow Up Boss
+      tier: 1
+      method: native_api
+      status: planned
+
+  transaction:
+    - slug: lone_wolf
+      name: Lone Wolf / TransactionDesk
+      tier: 1
+      method: native_api
+      status: planned
+
+    - slug: dotloop
+      name: Dotloop
+      tier: 1
+      method: native_api
+      status: planned
+
+  esign:
+    - slug: docusign
+      name: DocuSign
+      tier: 1
+      method: native_api
+      status: planned
+
+    - slug: pandadocs
+      name: PandaDocs
+      tier: 1
+      method: native_api
+      status: planned
+
+  mls_data:
+    - slug: bright_mls
+      name: Bright MLS
+      tier: 1
+      method: rets_or_api
+      status: planned
+
+    - slug: rpr
+      name: RPR (Realtors Property Resource)
+      tier: 1
+      method: native_api
+      status: planned
+
+    - slug: cloud_cma
+      name: Cloud CMA
+      tier: 1
+      method: native_api
+      status: planned
+
+  # ═══════════════════════════════════════
+  # TIER 2 — STANDARD (common, year one)
+  # ═══════════════════════════════════════
+
+  social:
+    - slug: facebook_pages
+      name: Facebook Pages
+      tier: 2
+      method: native_api
+      status: planned
+
+    - slug: facebook_ads
+      name: Facebook Ads Manager
+      tier: 2
+      method: native_api
+      status: planned
+
+    - slug: instagram
+      name: Instagram
+      tier: 2
+      method: native_api
+      status: planned
+
+    - slug: youtube
+      name: YouTube
+      tier: 2
+      method: native_api
+      status: planned
+
+    - slug: linkedin
+      name: LinkedIn
+      tier: 2
+      method: native_api
+      status: planned
+
+    - slug: tiktok
+      name: TikTok
+      tier: 2
+      method: native_api
+      status: planned
+
+    - slug: google_business
+      name: Google Business Profile
+      tier: 2
+      method: native_api
+      status: planned
+
+    - slug: x_twitter
+      name: X / Twitter
+      tier: 2
+      method: native_api
+      status: planned
+
+  leads:
+    - slug: zillow
+      name: Zillow Premier Agent
+      tier: 2
+      method: native_api
+      status: planned
+
+    - slug: realtor_com
+      name: Realtor.com
+      tier: 2
+      method: native_api
+      status: planned
+
+    - slug: homes_com
+      name: Homes.com
+      tier: 2
+      method: native_api
+      status: planned
+
+    - slug: opcity
+      name: Opcity / Realtor.com Concierge
+      tier: 2
+      method: native_api
+      status: planned
+
+    - slug: boomtown
+      name: BoomTown
+      tier: 2
+      method: native_api
+      status: planned
+
+    - slug: ylopo
+      name: Ylopo
+      tier: 2
+      method: native_api
+      status: planned
+
+  email_calendar:
+    - slug: gmail
+      name: Gmail
+      tier: 2
+      method: oauth_native
+      status: planned
+
+    - slug: google_calendar
+      name: Google Calendar
+      tier: 2
+      method: oauth_native
+      status: planned
+
+    - slug: outlook
+      name: Outlook / Microsoft 365
+      tier: 2
+      method: oauth_native
+      status: planned
+
+  scheduling:
+    - slug: calendly
+      name: Calendly
+      tier: 2
+      method: native_api
+      status: planned
+
+    - slug: acuity
+      name: Acuity Scheduling
+      tier: 2
+      method: native_api
+      status: planned
+
+  communication:
+    - slug: sms
+      name: SMS (Twilio)
+      tier: 2
+      method: twilio_api
+      status: planned
+
+    - slug: zoom
+      name: Zoom
+      tier: 2
+      method: native_api
+      status: planned
+
+  # ═══════════════════════════════════════
+  # TIER 3 — EXTENDED (long tail / optional)
+  # ═══════════════════════════════════════
+
+  crm_extended:
+    - slug: lofty
+      name: Lofty / Chime
+      tier: 3
+      method: native_api
+      status: planned
+
+    - slug: kv_core
+      name: kvCORE
+      tier: 3
+      method: native_api
+      status: planned
+
+    - slug: sierra_interactive
+      name: Sierra Interactive
+      tier: 3
+      method: native_api
+      status: planned
+
+  transaction_extended:
+    - slug: skyslope
+      name: Skyslope
+      tier: 3
+      method: native_api
+      status: planned
+
+    - slug: paperless_pipeline
+      name: Paperless Pipeline
+      tier: 3
+      method: native_api
+      status: planned
+
+  esign_extended:
+    - slug: hellosign
+      name: HelloSign / Dropbox Sign
+      tier: 3
+      method: native_api
+      status: planned
+
+    - slug: authentisign
+      name: Authentisign
+      tier: 3
+      method: native_api
+      status: planned
+
+  storage:
+    - slug: google_drive
+      name: Google Drive
+      tier: 3
+      method: oauth_native
+      status: planned
+
+    - slug: onedrive
+      name: Microsoft OneDrive
+      tier: 3
+      method: oauth_native
+      status: planned
+
+  accounting:
+    - slug: quickbooks
+      name: QuickBooks
+      tier: 3
+      method: native_api
+      status: planned
+
+    - slug: wave
+      name: Wave
+      tier: 3
+      method: native_api
+      status: planned
+
+  websites:
+    - slug: luxury_presence
+      name: Luxury Presence
+      tier: 3
+      method: native_api
+      status: planned
+
+    - slug: real_geeks
+      name: Real Geeks
+      tier: 3
+      method: native_api
+      status: planned
+
+  mls_extended:
+    - slug: mls_grid
+      name: MLS Grid (unified MLS API)
+      tier: 3
+      method: native_api
+      status: planned
+
+    - slug: corelogic
+      name: CoreLogic
+      tier: 3
+      method: native_api
+      status: planned

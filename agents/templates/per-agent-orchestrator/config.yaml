@@ -1,0 +1,46 @@
+# Per-Agent Orchestrator Template
+# Clone this for each real estate agent joining the team.
+
+name: "{AGENT_NAME} AI Orchestrator"
+version: "1.0.0"
+assigned_to: "{AGENT_NAME}"
+role: "per_agent_orchestrator"
+
+# This agent manages the full business of ONE real estate agent.
+# It delegates to specialists — it does NOT do deep work itself.
+
+capabilities:
+  - Lead intake and response (within 5 minutes)
+  - Transaction initiation → push to Transaction Central Agent
+  - Marketing requests → push to this agent's Marketing Agent
+  - Calendar and schedule management
+  - Client communication drafting
+  - CRM contact management (KW Command / Follow Up Boss)
+  - Daily briefing delivery to agent via Orgo app
+  - Weekly business review summary
+
+delegates_to:
+  transaction_central: true    # All transaction work goes here
+  marketing_agent: true        # All content/marketing goes here
+  escalates_to: romeo          # Stuck? Romeo gets an alert
+
+integrations:
+  # Filled in during agent onboarding via the Orgo app
+  crm: null                    # e.g. kw_command, follow_up_boss
+  email: null                  # e.g. gmail, outlook
+  calendar: null               # e.g. google_calendar, outlook
+  transaction: null            # e.g. lone_wolf, dotloop
+  esign: null                  # e.g. docusign, pandadocs
+  social: []                   # e.g. [facebook, instagram]
+  leads: []                    # e.g. [zillow, realtor_com]
+
+communication:
+  delivery_channel: orgo_app   # Agent communicates via the Orgo mobile app
+  backup_channel: telegram      # Fallback if Orgo is unavailable
+  escalation_channel: romeo_hermes  # Direct to Romeo's chief of staff
+
+schedule:
+  morning_briefing: "07:00"    # Daily briefing to agent
+  heartbeat_interval: "5m"     # Status ping to platform API
+  lead_response_sla: "5m"      # Max time to respond to new lead
+  transaction_check: "daily"   # Review all active transactions daily

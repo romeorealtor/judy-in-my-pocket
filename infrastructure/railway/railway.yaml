@@ -1,0 +1,30 @@
+services:
+  # ─── Backend API ───────────────────────────────────────────────
+  api:
+    source: backend/
+    build:
+      builder: NIXPACKS
+    deploy:
+      startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+      healthcheckPath: /health
+      restartPolicyType: ON_FAILURE
+    variables:
+      PORT: "8000"
+      DATABASE_URL: ${{Postgres.DATABASE_URL}}
+      REDIS_URL: ${{Redis.REDIS_URL}}
+
+  # ─── PostgreSQL Database ────────────────────────────────────────
+  postgres:
+    image: postgres:16
+    variables:
+      POSTGRES_DB: judy
+      POSTGRES_USER: judy_user
+      POSTGRES_PASSWORD: ${{secret.POSTGRES_PASSWORD}}
+    volumes:
+      - /var/lib/postgresql/data
+
+  # ─── Redis Cache / Pub-Sub ──────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    volumes:
+      - /data
