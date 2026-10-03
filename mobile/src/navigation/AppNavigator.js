@@ -8,6 +8,7 @@ import TransactionsScreen from '../screens/TransactionsScreen';
 import ChatScreen from '../screens/ChatScreen';
 import AlertsScreen from '../screens/AlertsScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import ConnectionsScreen from '../screens/ConnectionsScreen';
 import { colors } from '../theme/colors';
 
 const Tab = createBottomTabNavigator();
@@ -16,8 +17,8 @@ const TAB_ICONS = {
   Home: '🏠',
   Transactions: '📋',
   Chat: '💬',
+  Connections: '🔌',
   Alerts: '🔔',
-  Profile: '👤',
 };
 
 function TabIcon({ name, focused, alertCount }) {
@@ -98,8 +99,8 @@ export default function AppNavigator() {
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Transactions" component={TransactionsScreen} />
       <Tab.Screen name="Chat" component={ChatScreen} options={{ headerShown: false }} />
+      <Tab.Screen name="Connections" component={ConnectionsScreen} options={{ headerShown: false }} />
       <Tab.Screen name="Alerts" component={AlertsScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
 }
